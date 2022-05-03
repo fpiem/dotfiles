@@ -11,6 +11,12 @@
     "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform"
+    },
     "better-comments.tags": [
         {
             "backgroundColor": "transparent",
@@ -113,7 +119,12 @@
                         "meta.object-literal.key.js",
                         "variable.other.readwrite.hcl",
                         "variable.declaration.hcl",
-                        "variable.other.member.hcl"
+                        "variable.other.member.hcl",
+                        "variable.other.definition.java",
+                        "variable.other.java",
+                        "variable.other.object.java",
+                        "variable.other.object.property.java",
+                        "storage.modifier.import.java"
                     ],
                     "settings": {
                         "foreground": "#BBBBBB"
@@ -263,352 +274,6 @@
     "vscode-neovim.neovimExecutablePaths.linux": "/home/francesco/.local/bin/nvim.appimage",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/francesco/.config/nvim/init.vim",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    // VSpaceCode binding overrides
-    "vspacecode.bindingOverrides": [
-        {
-            "command": "workbench.action.previousEditorInGroup",
-            "icon": "arrow-down",
-            "keys": "b.n",
-            "name": "Next buffer in group",
-            "type": "command"
-        },
-        {
-            "command": "workbench.action.nextEditorInGroup",
-            "icon": "arrow-up",
-            "keys": "b.p",
-            "name": "Previous buffer in group",
-            "type": "command"
-        },
-        {
-            "command": "workbench.action.quickOpen",
-            "icon": "go-to-file",
-            "keys": "f.f",
-            "name": "Go to file",
-            "type": "command"
-        },
-        {
-            "command": "workbench.action.files.openFolder",
-            "icon": "folder-opened",
-            "keys": "f.F",
-            "name": "Open folder",
-            "type": "command"
-        },
-        {
-            "command": "file-browser.open",
-            "icon": "folder-opened",
-            "keys": "f.b",
-            "name": "Open file browser",
-            "type": "command"
-        },
-        {
-            "command": "workbench.action.terminal.toggleTerminal",
-            "icon": "terminal",
-            "keys": ",",
-            "name": "Toggle terminal",
-            "type": "command"
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ]
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ],
-            "command": "workbench.action.increaseViewWidth",
-            "icon": "arrow-right",
-            "keys": "w.]",
-            "name": "Increase editor width",
-            "type": "transient"
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ],
-            "command": "workbench.action.decreaseViewHeight",
-            "icon": "arrow-down",
-            "keys": "w.{",
-            "name": "Decrease editor height",
-            "type": "transient"
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ],
-            "command": "workbench.action.increaseViewHeight",
-            "icon": "arrow-up",
-            "keys": "w.}",
-            "name": "Increase editor heigth",
-            "type": "transient"
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ],
-            "command": "workbench.action.increaseViewSize",
-            "icon": "plus",
-            "keys": "w.+",
-            "name": "Increase editor size",
-            "type": "transient"
-        },
-        {
-            "bindings": [
-                {
-                    "command": "workbench.action.decreaseViewWidth",
-                    "icon": "arrow-left",
-                    "key": "[",
-                    "name": "Decrease editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewWidth",
-                    "icon": "arrow-right",
-                    "key": "]",
-                    "name": "Increase editor width",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewHeight",
-                    "icon": "arrow-down",
-                    "key": "{",
-                    "name": "Decrease editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewHeight",
-                    "icon": "arrow-up",
-                    "key": "}",
-                    "name": "Increase editor height",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.decreaseViewSize",
-                    "icon": "dash",
-                    "key": "_",
-                    "name": "Decrease editor size",
-                    "type": "command"
-                },
-                {
-                    "command": "workbench.action.increaseViewSize",
-                    "icon": "plus",
-                    "key": "+",
-                    "name": "Increase editor size",
-                    "type": "command"
-                }
-            ],
-            "command": "workbench.action.decreaseViewSize",
-            "icon": "dash",
-            "keys": "w._",
-            "name": "Decrease editor size",
-            "type": "transient"
-        }
-    ],
     "window.dialogStyle": "custom",
     // Jupyter-specific theme alterations
     "workbench.colorCustomizations": {
@@ -624,69 +289,12 @@
         "file:///home/francesco/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "glassit.alpha": 253,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.tools": [
-        {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
-        },
-        {
-            "name": "latexmk",
-            "tools": ["latexmk"]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": ["%DOCFILE%"]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "pdflatex -> bibtex -> pdflatex*2",
-            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
-        },
-        {
-            "name": "latexmk -> bibtex -> xelatex*2",
-            "tools": ["latexmk", "bibtex", "xelatex", "xelatex"]
-        },
-        {
-            "name": "PDFLaTeX",
-            "tools": ["pdflatex"]
-        },
-        {
-            "name": "XeLaTeX",
-            "tools": ["xelatex"]
-        },
-        {
-            "name": "BibTeX",
-            "tools": ["bibtex"]
-        },
-        {
-            "name": "xelatex -> bibtex -> xelatex*2",
-            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
-        },
-        {
-            "name": "bibtex -> xelatex",
-            "tools": ["bibtex", "xelatex"]
-        }
-    ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.autoSaveDelay": 500,
     "git.confirmSync": false,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "zenMode.hideLineNumbers": false,
     "search.showLineNumbers": true,
     "python.formatting.blackPath": "/home/francesco/miniconda3/envs/lint-format/bin/black",
@@ -698,7 +306,6 @@
     "jupyter.logging.level": "error",
     "python.linting.pylamaPath": "/home/francesco/miniconda3/envs/lint-format/bin/pylama",
     "python.linting.pylamaArgs": ["--max-line-length=120"],
-    "vva.trustedDomain": true,
     "terminal.integrated.lineHeight": 1.1,
     "whichkey.sortOrder": "alphabetically",
     "whichkey.bindings": [
@@ -2141,9 +1748,6 @@
     "editor.formatOnSave": true,
     "magit.hide-status-sections": [],
     "git.untrackedChanges": "separate",
-    "[terraform]": {
-        "editor.defaultFormatter": "hashicorp.terraform"
-    },
     "python.linting.mypyCategorySeverity.error": "Warning",
     "atlascode.showWelcomeOnInstall": false,
     "atlascode.bitbucket.pipelines.monitorEnabled": false,
@@ -2153,14 +1757,11 @@
     "atlascode.bitbucket.pipelines.refreshInterval": 3,
     "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
     "editor.minimap.enabled": false,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "window.menuBarVisibility": "compact",
     "liveServer.settings.donotShowInfoMsg": true,
     "editor.renderWhitespace": "trailing",
-    "workbench.colorTheme": "Horizon",
     "editor.inlayHints.enabled": false,
     "editor.inlineSuggest.enabled": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Horizon"
 }
