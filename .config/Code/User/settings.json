@@ -283,7 +283,6 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "yaml.schemas": {
         "file:///home/francesco/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
@@ -294,7 +293,7 @@
     },
     "files.autoSaveDelay": 500,
     "git.confirmSync": false,
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "zenMode.hideLineNumbers": false,
     "search.showLineNumbers": true,
     "python.formatting.blackPath": "/home/francesco/miniconda3/envs/lint-format/bin/black",
@@ -1762,6 +1761,17 @@
     "editor.renderWhitespace": "trailing",
     "editor.inlayHints.enabled": false,
     "editor.inlineSuggest.enabled": true,
+    "editor.bracketPairColorization.enabled": false,
     "window.zoomLevel": 1,
-    "workbench.layoutControl.type": "menu"
+    "workbench.layoutControl.type": "menu",
+    "workbench.colorTheme": "Horizon",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "scm.diffDecorationsGutterPattern": {
+        "modified": false
+    },
+    "scm.diffDecorationsGutterWidth": 2,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.gpuAcceleration": "canvas"
 }
