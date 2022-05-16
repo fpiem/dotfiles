@@ -162,3 +162,8 @@ export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 # <<< linuxbrew
 
+# >>> Personal aliases
+alias gpod="git pull origin dev"
+alias gpgg="git pull && git gone"
+alias gsd="git switch dev"
+# <<< Personal aliases
