@@ -238,9 +238,9 @@ let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright']
 " }}}
 
 " {{{ easymotion
-map m <Plug>(easymotion-bd-w)
-map M <Plug>(easymotion-bd-jk)
-map & <Plug>(easymotion-bd-f)
+" map m <Plug>(easymotion-bd-w)
+" map M <Plug>(easymotion-bd-jk)
+" map & <Plug>(easymotion-bd-f)
 " }}}
 
 " {{{ toggleterm
@@ -367,8 +367,8 @@ nnoremap <silent> <leader>zo zo
 " }}}
 
 " {{{ vim-sneak
-nmap z <Plug>Sneak_s
-nmap Z <Plug>Sneak_S
+nmap m <Plug>Sneak_s
+nmap M <Plug>Sneak_S
 let g:sneak#s_next = 1
 " }}}
 
