@@ -127,3 +127,5 @@ alias 'FUCK'='fuck --yeah'
 alias 'upupa'='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 alias 'tf'='terraform'
 # <<< Personal aliases
+
+eval $(thefuck --alias)
