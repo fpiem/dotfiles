@@ -89,6 +89,7 @@
     "editor.rulers": [100, 120],
     "editor.suggest.insertMode": "replace",
     "editor.suggestSelection": "first",
+
     // Editor theme alterations
     "editor.tokenColorCustomizations": {
         "[Horizon]": {
@@ -131,12 +132,6 @@
                     }
                 },
                 {
-                    "scope": ["variable.declaration.hcl"],
-                    "settings": {
-                        "foreground": "#E95678E6"
-                    }
-                },
-                {
                     "scope": [
                         "support.type.property-name.json",
                         "entity.name.tag.yaml",
@@ -167,10 +162,26 @@
                     "scope": [
                         "entity.name.tag",
                         "entity.name.tag.localname.xml",
-                        "markup.deleted.diff"
+                        "markup.deleted.diff",
+                        "variable.declaration.hcl"
                     ],
                     "settings": {
                         "foreground": "#E95678"
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.definition.range.diff",
+                        "meta.toc-list.line-number.diff"
+                    ],
+                    "settings": {
+                        "foreground": "#3498DB"
+                    }
+                },
+                {
+                    "scope": ["meta.diff"],
+                    "settings": {
+                        "foreground": "#808080"
                     }
                 }
             ]
