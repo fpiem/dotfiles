@@ -68,7 +68,6 @@ Plug 'kana/vim-textobj-function'  " function text object defined by 'f'
 Plug 'kana/vim-textobj-user'  " used by other plugins to define custom text objects
 Plug 'Konfekt/vim-CtrlXA'
 Plug 'machakann/vim-highlightedyank'
-Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-swap'
 Plug 'matze/vim-move'
 Plug 'michaeljsmith/vim-indent-object'  " indent text object
@@ -378,63 +377,6 @@ let g:sneak#s_next = 1
 let g:swap_no_default_key_mappings = 1
 nmap g< <Plug>(swap-prev)
 nmap g> <Plug>(swap-next)
-
-" nnoremap <Leader>ws :w<CR> :source $MYVIMRC<CR>
-" }}}
-
-" {{{ sandwich
-let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-
-" Complex to set up but oh so worth it
-" Adds q and Q inputs for single and double quotes in vim-sandwich
-" Adds rb, sb and cb for round, square and curly brackets
-let g:sandwich#recipes += [
-      \   {
-      \     'buns':         ["'", "'"],
-      \     'quoteescape':  1,
-      \     'expand_range': 0,
-      \     'nesting':      0,
-      \     'linewise':     0,
-      \     'match_syntax': 1,
-      \     'input': ['q']
-      \   },
-      \   {
-      \     'buns':         ['"', '"'],
-      \     'quoteescape':  1,
-      \     'expand_range': 0,
-      \     'nesting':      0,
-      \     'linewise':     0,
-      \     'match_syntax': 1,
-      \     'input': ['Q']
-      \   },
-      \   {
-      \     'buns':         ["(", ")"],
-      \     'quoteescape':  1,
-      \     'expand_range': 0,
-      \     'nesting':      0,
-      \     'linewise':     0,
-      \     'match_syntax': 1,
-      \     'input': ['rb']
-      \   },
-      \   {
-      \     'buns':         ["[", "]"],
-      \     'quoteescape':  1,
-      \     'expand_range': 0,
-      \     'nesting':      0,
-      \     'linewise':     0,
-      \     'match_syntax': 1,
-      \     'input': ['sb']
-      \   },
-      \   {
-      \     'buns':         ["{", "}"],
-      \     'quoteescape':  1,
-      \     'expand_range': 0,
-      \     'nesting':      0,
-      \     'linewise':     0,
-      \     'match_syntax': 1,
-      \     'input': ['cb']
-      \   },
-   \]
 " }}}
 
 " {{{ clever-f
