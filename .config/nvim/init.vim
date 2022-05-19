@@ -76,12 +76,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'phaazon/hop.nvim'  " TODO: same as lightspeed
-Plug 'rhysd/clever-f.vim'
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
-Plug 'tommcdo/vim-exchange'  " cx operator for swapping portions of text
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -377,11 +374,6 @@ let g:sneak#s_next = 1
 let g:swap_no_default_key_mappings = 1
 nmap g< <Plug>(swap-prev)
 nmap g> <Plug>(swap-next)
-" }}}
-
-" {{{ clever-f
-" TODO: setup, see rhysd/clever-f.vim on GitHub
-let g:clever_f_smart_case = 1
 " }}}
 
 " {{{ dashboard
