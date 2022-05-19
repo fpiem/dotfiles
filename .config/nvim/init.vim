@@ -58,7 +58,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'bkad/CamelCaseMotion'  " leader + motion moves over camel/snake case words
 Plug 'christoomey/vim-sort-motion'  " gs motion to sort
 Plug 'christoomey/vim-system-copy'  " cp and cv motions to copy/paste from the system clipboard
-"e Plug 'ggandor/lightspeed.nvim'  " TODO: try again, especially when supported in VSCode Neovim
+Plug 'ggandor/lightspeed.nvim'
 Plug 'glepnir/dashboard-nvim'
 Plug 'jeetsukumaran/vim-pythonsense'  " text objects for Python development
 Plug 'jiangmiao/auto-pairs'
