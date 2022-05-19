@@ -54,7 +54,6 @@ endfunction
 " {{{ Plugins
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'akinsho/toggleterm.nvim'
-" Plug 'AndrewRadev/sideways.vim'
 Plug 'bkad/CamelCaseMotion'  " leader + motion moves over camel/snake case words
 Plug 'christoomey/vim-sort-motion'  " gs motion to sort
 Plug 'christoomey/vim-system-copy'  " cp and cv motions to copy/paste from the system clipboard
@@ -83,6 +82,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'  " makes Ctrl+A and Ctrl+X work on dates
+Plug 'tpope/vim-surround'
 Plug 'tweekmonster/braceless.vim'  " text object and motion support for braceless languages such as Python
 Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/ReplaceWithRegister'  " replace text with register contents without visual mode
@@ -273,8 +273,6 @@ let g:lightline = { 'colorscheme': 'sonokai' }
 " Needs terminal and vim themes to be similar
 highlight Normal guibg=none guifg=none
 highlight EndOfBuffer guibg=none guifg=none
-
-
 " }}}
 
 " {{{ nerdtree
