@@ -108,9 +108,6 @@ export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}$
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 # <<< cuda stuff
 
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init -)"
-
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="$HOME/apps-and-plugins/tfenv/bin:$PATH"
 
@@ -126,6 +123,8 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 alias gpod="git pull origin dev"
 alias gpgg="git pull && git gone"
 alias gsd="git switch dev"
+
+alias cl="clear"
 
 alias 'FUCK'='fuck --yeah'
 alias 'upupa'='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
