@@ -75,6 +75,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'rhysd/clever-f.vim'
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
@@ -214,8 +215,8 @@ if exists('g:vscode')
 
     " Test - changing remote button color based on NeoVim mode
     " ! Waiting for neovim to support the ModeChanged autocmd event
-    autocmd InsertEnter * :call VSCodeNotify('settings.cycle.neovimInsertModeColor')
-    autocmd InsertLeave * :call VSCodeNotify('settings.cycle.neovimNormalModeColor')
+    " autocmd InsertEnter * :call VSCodeNotify('settings.cycle.neovimInsertModeColor')
+    " autocmd InsertLeave * :call VSCodeNotify('settings.cycle.neovimNormalModeColor')
     " nnoremap v :call VSCodeNotify('settings.cycle.neovimVisualModeColor')<CR>v
 
 endif
@@ -321,7 +322,7 @@ noremap H ^
 noremap L $
 
 " S to 'Stamp' yanked word over current word
-nmap S griw
+" nmap S griw
 
 " Navigate between panes without Ctrl + w
 if !exists('g:vscode')
@@ -396,4 +397,3 @@ let g:dashboard_custom_header = [
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
 " }}}
-
