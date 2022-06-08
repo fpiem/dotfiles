@@ -71,6 +71,15 @@
             "strikethrough": false,
             "tag": "*",
             "underline": false
+        },
+        {
+            "backgroundColor": "transparent",
+            "bold": false,
+            "color": "#B877DBE6",
+            "italic": false,
+            "strikethrough": false,
+            "tag": "hack",
+            "underline": false
         }
     ],
     "code-runner.runInTerminal": true,
