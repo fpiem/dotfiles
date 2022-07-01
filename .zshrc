@@ -123,12 +123,25 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 alias gpod="git pull origin dev"
 alias gpgg="git pull && git gone"
 alias gsd="git switch dev"
+alias gsw="git switch"
+alias gP="git push"
+alias lg="lazygit"
 
 alias cl="clear"
 
 alias 'FUCK'='fuck --yeah'
 alias 'upupa'='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 alias 'tf'='terraform'
+
+alias nord=nordvpn
+
+export EDITOR=vim
 # <<< Personal aliases
 
 eval $(thefuck --alias)
+
+# >>> TeX >>>
+export MANPATH="/usr/local/texlive/2022/texmf-dist/doc/man:$PATH"
+export INFOPATH="/usr/local/texlive/2022/texmf-dist/doc/info:$PATH"
+export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
+# <<< TeX <<<
