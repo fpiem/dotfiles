@@ -58,7 +58,6 @@ Plug 'bkad/CamelCaseMotion'  " leader + motion moves over camel/snake case words
 Plug 'christoomey/vim-sort-motion'  " gs motion to sort
 Plug 'christoomey/vim-system-copy'  " cp and cv motions to copy/paste from the system clipboard
 Plug 'ggandor/lightspeed.nvim'
-Plug 'glepnir/dashboard-nvim'
 Plug 'jeetsukumaran/vim-pythonsense'  " text objects for Python development
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
@@ -70,11 +69,11 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-swap'
 Plug 'matze/vim-move'
 Plug 'michaeljsmith/vim-indent-object'  " indent text object
+Plug 'mg979/vim-visual-multi'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'phaazon/hop.nvim'
 Plug 'rhysd/clever-f.vim'
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
@@ -119,11 +118,22 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- mandatory, false will disable the whole extension
   },
 }
+
+require'lightspeed'.setup {
+ ignore_case = true,
+}
+require('patch_lightspeed')
+require'hop'.setup()
 EOF
 " }}}
 
 " {{{ VSCode integration
+hi LightSpeedCursor gui=reverse
+
 if exists('g:vscode')
+    nnoremap j gj
+    nnoremap k gk
+
     nnoremap <silent> o <Cmd>call VSCodeNotify('editor.action.insertLineAfter')<CR>i
     nnoremap <silent> O <Cmd>call VSCodeNotify('editor.action.insertLineBefore')<CR>i
 
@@ -206,6 +216,9 @@ if exists('g:vscode')
     nmap gc  <Plug>VSCodeCommentary
     omap gc  <Plug>VSCodeCommentary
     nmap gcc <Plug>VSCodeCommentaryLine
+
+    nnoremap m :call VSCodeNotify('editor.fold')<CR>
+    nnoremap M :call VSCodeNotify('editor.unfold')<CR>
 
     " Use tab to cycle through buffers in the same group
     " NOTE: This was done via vscode keybinds, to avoid problems with windows such as
@@ -322,7 +335,7 @@ noremap H ^
 noremap L $
 
 " S to 'Stamp' yanked word over current word
-" nmap S griw
+nmap S griw
 
 " Navigate between panes without Ctrl + w
 if !exists('g:vscode')
@@ -361,11 +374,6 @@ nnoremap <silent> <leader>zf zf
 nnoremap <silent> <leader>zo zo
 " }}}
 
-" {{{ vim-sneak
-nmap m <Plug>Sneak_s
-nmap M <Plug>Sneak_S
-let g:sneak#s_next = 1
-" }}}
 
 " {{{ vim-swap
 " Override the default vim-swap keybinds (as I'd rather use
@@ -375,25 +383,5 @@ nmap g< <Plug>(swap-prev)
 nmap g> <Plug>(swap-next)
 " }}}
 
-" {{{ dashboard
-" TODO: these bindings cause a delay when calling <leader>t , which is the NerdTree toggle
-let g:dashboard_default_executive ='telescope'
-" nmap <Leader>ss :<C-u>SessionSave<CR>
-" nmap <Leader>sl :<C-u>SessionLoad<CR>
-" nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-" nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
-" nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-" nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-" nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-" nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+nnoremap s <Plug>Lightspeed_omni_s
 
-" TODO: move this to a separate file for the love of god
-let g:dashboard_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-\]
-" }}}
