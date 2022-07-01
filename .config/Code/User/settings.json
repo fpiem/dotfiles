@@ -87,7 +87,6 @@
     "customizeUI.activityBar": "regular",
     "customizeUI.font.regular": "Roboto",
     "customizeUI.titleBar": "frameless",
-    "diffEditor.ignoreTrimWhitespace": false,
     "editor.foldingStrategy": "indentation",
     "editor.fontFamily": "Liga SFMono Nerd Font",
     "editor.fontLigatures": "on",
@@ -95,7 +94,7 @@
     "editor.largeFileOptimizations": false,
     "editor.minimap.showSlider": "always",
     "editor.mouseWheelZoom": true,
-    "editor.rulers": [100, 120],
+    "editor.rulers": [120],
     "editor.suggest.insertMode": "replace",
     "editor.suggestSelection": "first",
 
@@ -162,7 +161,11 @@
                     }
                 },
                 {
-                    "scope": ["entity.name.function.decorator.python", "markup.inserted.diff"],
+                    "scope": [
+                        "entity.name.function.decorator.python",
+                        "markup.inserted.diff",
+                        "constant.other.timestamp.yaml"
+                    ],
                     "settings": {
                         "foreground": "#1FCC8DEA"
                     }
@@ -219,7 +222,8 @@
     "files.watcherExclude": {
         "**/.ammonite": true,
         "**/.bloop": true,
-        "**/.metals": true
+        "**/.metals": true,
+        "**/build": true
     },
     "git.countBadge": "tracked",
     "glassit-linux.opacity": 98,
@@ -248,13 +252,10 @@
     "python.terminal.launchArgs": [],
     "redhat.telemetry.enabled": false,
     "telemetry.telemetryLevel": "off",
-    "rewrap.wrappingColumn": 100,
+    "rewrap.wrappingColumn": 120,
     // ! Disable trusted workspaces
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
-    // Disable tab9 for specific languages / file types
-    "tabnine.disable_file_regex": ["[.].md", "[.].txt"],
-    "tabnine.experimentalAutoImports": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.fontSize": 13,
@@ -291,7 +292,7 @@
     "todo.tags.names": ["critical", "high", "medium", "low", "maybe"],
     "vetur.experimental.templateInterpolationService": true,
     "vetur.ignoreProjectWarning": true,
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/francesco/.local/bin/nvim.appimage",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/francesco/.config/nvim/init.vim",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.dialogStyle": "custom",
@@ -301,7 +302,8 @@
     },
     "workbench.editor.untitled.hint": "hidden",
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "git-rebase-todo": "default"
     },
     "workbench.startupEditor": "newUntitledFile",
     "yaml.schemas": {
@@ -313,7 +315,7 @@
     },
     "files.autoSaveDelay": 500,
     "git.confirmSync": false,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "zenMode.hideLineNumbers": false,
     "search.showLineNumbers": true,
     "python.formatting.blackPath": "/home/francesco/miniconda3/envs/lint-format/bin/black",
@@ -1687,43 +1689,6 @@
         "todo": false,
         "python": true
     },
-    // "jupyter.enabledKeyboardShortcuts": true
-    // * Experiment -> change remote button color based on NeoVim mode
-    "settings.cycle": [
-        {
-            "id": "neovimNormalModeColor",
-            "overrideWorkspaceSettings": false,
-            "values": [
-                {
-                    "workbench.colorCustomizations": {
-                        "statusBarItem.remoteBackground": "#E95379"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "neovimVisualModeColor",
-            "overrideWorkspaceSettings": false,
-            "values": [
-                {
-                    "workbench.colorCustomizations": {
-                        "statusBarItem.remoteBackground": "#1EAEAE"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "neovimInsertModeColor",
-            "overrideWorkspaceSettings": false,
-            "values": [
-                {
-                    "workbench.colorCustomizations": {
-                        "statusBarItem.remoteBackground": "#B877DB"
-                    }
-                }
-            ]
-        }
-    ],
     "code-runner.ignoreSelection": true,
     "code-runner.saveFileBeforeRun": true,
     "code-runner.saveAllFilesBeforeRun": true,
@@ -1757,16 +1722,13 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false,
     "gitlens.blame.avatars": false,
-    "editor.minimap.side": "left",
     "editor.minimap.size": "fit",
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
     "material-icon-theme.opacity": 1,
     "material-icon-theme.activeIconPack": "vue_vuex",
     "material-icon-theme.saturation": 1,
-    "editor.formatOnSave": true,
     "magit.hide-status-sections": [],
-    "git.untrackedChanges": "separate",
     "python.linting.mypyCategorySeverity.error": "Warning",
     "atlascode.showWelcomeOnInstall": false,
     "atlascode.bitbucket.pipelines.monitorEnabled": false,
@@ -1775,16 +1737,13 @@
     "git.autorefresh": true,
     "atlascode.bitbucket.pipelines.refreshInterval": 3,
     "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
-    "editor.minimap.enabled": false,
     "window.menuBarVisibility": "compact",
     "liveServer.settings.donotShowInfoMsg": true,
     "editor.renderWhitespace": "trailing",
     "editor.inlayHints.enabled": false,
     "editor.inlineSuggest.enabled": true,
     "editor.bracketPairColorization.enabled": false,
-    "window.zoomLevel": 1,
     "workbench.layoutControl.type": "menu",
-    "workbench.colorTheme": "Horizon",
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
@@ -1793,5 +1752,31 @@
     },
     "scm.diffDecorationsGutterWidth": 2,
     "workbench.iconTheme": "material-icon-theme",
-    "terminal.integrated.gpuAcceleration": "canvas"
+    "window.zoomLevel": 1,
+    "editor.minimap.renderCharacters": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "Horizon",
+    "[dockercompose]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "git.autofetch": true,
+    "mssql.connections": [
+        {
+            "server": "crewapplications-sqlmi-t.fe24bc82b794.database.windows.net,1433",
+            "database": "MistralShoreCosta",
+            "authenticationType": "SqlLogin",
+            "user": "Mistral_ML_Sql",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "profileName": "Mistral Costa"
+        }
+    ],
+    "pylint.args": ["disable=C0114"],
+    "editor.wordWrapColumn": 120,
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.minimap.enabled": false,
+    "Lua.telemetry.enable": false
 }
