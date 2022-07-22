@@ -145,3 +145,7 @@ export MANPATH="/usr/local/texlive/2022/texmf-dist/doc/man:$PATH"
 export INFOPATH="/usr/local/texlive/2022/texmf-dist/doc/info:$PATH"
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # <<< TeX <<<
+
+
+# Solves "terminals database is inaccessible" error in kitty
+export TERMINFO=/usr/share/terminfo
